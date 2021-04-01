@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "372946297842",
+    "project_id": "unigroceries-504a5",
+    "storage_bucket": "unigroceries-504a5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:372946297842:android:73c381fd386515e442416b",
+        "android_client_info": {
+          "package_name": "com.example.unigroceries"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "372946297842-33j4tm8cnfb6lbdtsh0np0t8d2okm3nc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.unigroceries",
+            "certificate_hash": "2005c9c912bc70e8133d5b2e12b37a3794f4f453"
+          }
+        },
+        {
+          "client_id": "372946297842-scj0i7m9q9hkqrifguoeub45b0t6ecmv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzYnozrB1Z4um4yJPuzYvDzBBENyt82rU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "372946297842-scj0i7m9q9hkqrifguoeub45b0t6ecmv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
