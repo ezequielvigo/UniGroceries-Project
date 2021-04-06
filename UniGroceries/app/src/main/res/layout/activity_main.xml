@@ -68,7 +68,7 @@
         android:height="48dp"
         android:background="@drawable/primary_button"
         android:fontFamily="@font/sdreg"
-        android:onClick="temporaryNav"
+        android:onClick="signIn"
         android:text="Log In"
         android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"

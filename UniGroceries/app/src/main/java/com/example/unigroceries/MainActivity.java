@@ -58,8 +58,8 @@ public class MainActivity extends AppCompatActivity {
 
         //Retrieving user input from Edit Text fields
 
-        String email = emailEt.toString();
-        String password = passwordEt.toString();
+        String email = emailEt.getText().toString();
+        String password = passwordEt.getText().toString();
         progressBar.setVisibility(View.VISIBLE);
 
         mAuth.signInWithEmailAndPassword(email, password)
@@ -69,9 +69,16 @@ public class MainActivity extends AppCompatActivity {
                     if (task.isSuccessful()) {
                         // Sign in success, update UI with the signed-in user's information
                         Log.d("UniGroceries Debug", "signInWithEmail:success");
-                        FirebaseUser user = mAuth.getCurrentUser();
                         progressBar.setVisibility(View.GONE);
-                        updateUI(user);
+                        FirebaseUser user = mAuth.getCurrentUser();
+                        if(user.isEmailVerified()){
+                            startActivity(new Intent(MainActivity.this, HomePage.class));
+                        }else{
+                            user.sendEmailVerification();
+                            Toast.makeText(MainActivity.this, "Check your email to verify your account", Toast.LENGTH_LONG).show();
+                        }
+
+
                     } else {
                         // If sign in fails, display a message to the user.
                         Log.w("UniGroceries Debug", "signInWithEmail:failure", task.getException());
