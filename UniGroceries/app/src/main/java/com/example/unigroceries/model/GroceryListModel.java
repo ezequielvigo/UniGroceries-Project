@@ -1,15 +1,17 @@
 package com.example.unigroceries.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class GroceryListModel {
+public class GroceryListModel implements Serializable {
 
     public int id;
-    public Date date;
+    public String date;
+    public String title = "Untitled Grocery List";
     public ArrayList<String> groceryList;
 
-    public GroceryListModel(Date date, ArrayList<String> groceryList){
+    public GroceryListModel(String date, ArrayList<String> groceryList){
         this.date = date;
         this.groceryList = groceryList;
     }
@@ -18,8 +20,16 @@ public class GroceryListModel {
         return groceryList;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getTitle() {
+        return title;
     }
 
     public int getId() {

@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ViewGroceryList"></activity>
+        <activity android:name=".SingleGroceryList"></activity>
+        <activity android:name=".ViewGroceryList" />
         <activity android:name=".CreateGroceryList" />
         <activity android:name=".GroceryListPage" />
         <activity android:name=".IngredientSearchResults" />
