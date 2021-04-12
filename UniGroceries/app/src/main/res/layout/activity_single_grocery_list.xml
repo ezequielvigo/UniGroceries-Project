@@ -4,6 +4,72 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/lightGreen"
     tools:context=".SingleGroceryList">
 
+    <Button
+        android:id="@+id/button21"
+        android:layout_width="33dp"
+        android:layout_height="33dp"
+        android:background="@drawable/arrow_left_solid"
+        android:onClick="backPressed"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.041" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/singleGroceryListRecyclerView"
+        android:layout_width="wrap_content"
+        android:layout_height="498dp"
+        android:layout_marginTop="152dp"
+        android:layout_marginEnd="184dp"
+        android:layout_marginRight="184dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/singleListTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginRight="80dp"
+        android:text="Grocery List Title"
+        android:textColor="@color/primaryBrown"
+        android:textSize="32dp"
+        app:fontFamily="@font/sdultra"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/failedToRetrieve"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="144dp"
+        android:layout_marginEnd="128dp"
+        android:layout_marginRight="128dp"
+        android:text="Couldn't retrieve grocery list"
+        android:textColor="#C62828"
+        android:textSize="18dp"
+        android:visibility="invisible"
+        app:fontFamily="@font/sdultra"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/singleListDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="108dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginRight="80dp"
+        android:text="DD/MM/YY"
+        android:textColor="@color/primaryBrown"
+        android:textSize="18dp"
+        app:fontFamily="@font/sdultra"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

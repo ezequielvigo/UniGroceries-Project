@@ -50,7 +50,6 @@ public class ViewGroceryList extends AppCompatActivity {
         GroceryListAdapter groceryListAdapter = new GroceryListAdapter(this, groceryListModelList);
 
         recyclerView.setAdapter(groceryListAdapter);
-
     }
 
     public void backPressed(View v){

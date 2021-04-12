@@ -20,7 +20,7 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.777" />
+        app:layout_constraintVertical_bias="0.819" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/groceryIngredientRecyclerView"
@@ -31,17 +31,18 @@
         android:layout_marginBottom="136dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.372" />
+        app:layout_constraintVertical_bias="0.523" />
 
     <Button
         android:id="@+id/button17"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginTop="140dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
         android:background="@drawable/secondary_button"
         android:fontFamily="@font/sdbold"
         android:onClick="addItem"
@@ -56,14 +57,14 @@
         android:layout_marginTop="342dp"
         android:background="@drawable/secondary_button"
         android:fontFamily="@font/sdbold"
-        android:onClick="addItem"
+        android:onClick="createList"
         android:text="FINISH"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.741" />
+        app:layout_constraintVertical_bias="0.835" />
 
     <Button
         android:id="@+id/button16"
@@ -82,17 +83,30 @@
         android:id="@+id/groceryIngredientEt"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="74dp"
-        android:layout_marginBottom="603dp"
+        android:layout_marginTop="140dp"
+        android:layout_marginEnd="128dp"
+        android:layout_marginRight="128dp"
         android:background="@drawable/text_edit"
         android:ems="10"
         android:hint="Ingredient Name"
         android:inputType="textPersonName"
         android:padding="15dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.229"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/groceryListTitleEt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        android:ems="10"
+        android:fontFamily="@font/sdultra"
+        android:hint="Your Grocery List Title"
+        android:inputType="textPersonName"
+        android:textColor="@color/primaryBrown"
+        android:textSize="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
