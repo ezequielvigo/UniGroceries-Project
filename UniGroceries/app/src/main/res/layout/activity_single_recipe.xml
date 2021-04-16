@@ -39,26 +39,28 @@
         android:id="@+id/recipeTitleView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
         android:text="Ingredients"
         android:textColor="@color/primaryBrown"
         android:textSize="24sp"
         app:fontFamily="@font/sdultra"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.165"
+        app:layout_constraintHorizontal_bias="0.173"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.606" />
+        app:layout_constraintTop_toBottomOf="@+id/portionsView"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/ingredientsView"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
         android:textColor="@color/primaryBrown"
         android:textSize="18sp"
         app:fontFamily="@font/sdultra"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.283"
+        app:layout_constraintHorizontal_bias="0.298"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -66,6 +68,7 @@
         android:id="@+id/recipeSource"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
         android:text="Recipe by:"
         android:textColor="@color/primaryBrown"
         android:textSize="18sp"
@@ -74,8 +77,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.253"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.46" />
+        app:layout_constraintTop_toBottomOf="@+id/recipeImageView"
+        app:layout_constraintVertical_bias="0.052" />
 
     <TextView
         android:id="@+id/readyIn"
@@ -87,7 +90,8 @@
         app:fontFamily="@font/sdultra"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/recipeSource"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/recipeSource"
+        app:layout_constraintVertical_bias="0.05" />
 
     <TextView
         android:id="@+id/portionsView"
@@ -99,30 +103,31 @@
         app:fontFamily="@font/sdultra"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/readyIn"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.545" />
+        app:layout_constraintTop_toBottomOf="@+id/readyIn"
+        app:layout_constraintVertical_bias="0.066" />
 
     <ImageView
         android:id="@+id/recipeImageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.233"
+        app:layout_constraintTop_toBottomOf="@+id/recipeTitleView"
+        app:layout_constraintVertical_bias="0.038"
         tools:srcCompat="@tools:sample/avatars" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/ingredientRecyclerView"
         android:layout_width="297dp"
-        android:layout_height="250dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.266"
+        app:layout_constraintHorizontal_bias="0.438"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/recipeTitleView2"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

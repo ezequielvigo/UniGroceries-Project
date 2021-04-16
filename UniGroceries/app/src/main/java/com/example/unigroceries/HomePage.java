@@ -38,7 +38,7 @@ public class HomePage extends AppCompatActivity {
 
         reference.child(uId).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot){
                 User currentUser = dataSnapshot.getValue(User.class);
                 if(user != null){
                    String userFullName = currentUser.name;

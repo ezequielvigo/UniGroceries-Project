@@ -60,8 +60,24 @@ public class MainActivity extends AppCompatActivity {
 
         String email = emailEt.getText().toString();
         String password = passwordEt.getText().toString();
-        progressBar.setVisibility(View.VISIBLE);
 
+        if(email.isEmpty()){
+            emailEt.setError("Email cannot be empty");
+            if(password.isEmpty()){
+                passwordEt.setError("Password cannot be empty");
+            }
+            return;
+        }
+
+        if(password.isEmpty()){
+            passwordEt.setError("Password cannot be empty");
+            if(email.isEmpty()){
+                emailEt.setError("Email cannot be empty");
+            }
+            return;
+        }
+
+        progressBar.setVisibility(View.VISIBLE);
         mAuth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                 @Override

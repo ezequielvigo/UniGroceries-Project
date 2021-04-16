@@ -11,6 +11,10 @@ public class GroceryListModel implements Serializable {
     public String title = "Untitled Grocery List";
     public ArrayList<String> groceryList;
 
+    public GroceryListModel(){
+
+    }
+
     public GroceryListModel(String date, ArrayList<String> groceryList){
         this.date = date;
         this.groceryList = groceryList;

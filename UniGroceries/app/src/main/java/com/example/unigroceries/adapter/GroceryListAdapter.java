@@ -39,7 +39,11 @@ public class GroceryListAdapter extends RecyclerView.Adapter<GroceryListAdapter.
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.listDate.setText(groceryListModelList.get(position).getDate().toString());
-        holder.listTitle.setText(groceryListModelList.get(position).getTitle().toString());
+        if(groceryListModelList.get(position).getTitle().isEmpty()){
+            holder.listTitle.setText("Untitled grocery list");
+        }else{
+            holder.listTitle.setText(groceryListModelList.get(position).getTitle().toString());
+        }
         holder.seeMore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

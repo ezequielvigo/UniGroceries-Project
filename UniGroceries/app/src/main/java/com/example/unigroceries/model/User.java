@@ -27,4 +27,8 @@ public class User {
     public String getEmail() {
         return email;
     }
+
+    public ArrayList<GroceryListModel> getGroceryListModels() {
+        return groceryListModels;
+    }
 }

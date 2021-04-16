@@ -44,8 +44,14 @@ public class SingleGroceryList extends AppCompatActivity {
         //Checking if the grocery list that was passed was empty
         if(groceryList != null) {
             //Setting the views to their respective values from the groceryList
+            //Checks if the grocery list has an attached title
             groceryListDate.setText(groceryList.getDate());
-            groceryListTitle.setText(groceryList.getTitle());
+            if(groceryList.getTitle().isEmpty()){
+                groceryListTitle.setText("Untitled Grocery List");
+            }else{
+                groceryListTitle.setText(groceryList.getTitle());
+            }
+
             //If it isn't empty, it retrieves List<IngredientModel> from the ingredients contained
             ingredientModelList = ingredientsFromList(groceryList);
             LinearLayoutManager linearLayoutManager = new GridLayoutManager(this, 1);
