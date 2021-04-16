@@ -31,16 +31,20 @@ public class HomePage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
 
+        //Initialising all variables
         welcomeBack = findViewById(R.id.welcomeTextView);
         user = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("Users");
         uId = user.getUid();
 
+        //Starts a single value event listener to retrieve user's name
         reference.child(uId).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot){
+                //Retrieves the user class
                 User currentUser = dataSnapshot.getValue(User.class);
                 if(user != null){
+                    //Retrieves the name and sets it on the welcome back textView
                    String userFullName = currentUser.name;
                    welcomeBack.setText("Welcome Back " +userFullName+"! ");
                 }
@@ -55,14 +59,24 @@ public class HomePage extends AppCompatActivity {
 
     }
 
+    //Navigates to the search page
     public void searchPage(View v){
         Intent searchIntent = new Intent(HomePage.this, SearchPage.class);
         startActivity(searchIntent);
     }
 
+    //Navigates to the grocery list page
     public void groceryListPage(View v)
     {
         Intent intent = new Intent(HomePage.this, GroceryListPage.class);
         startActivity(intent);
+    }
+
+    //Signs the user out of their account
+    public void signOut(View v){
+       FirebaseAuth.getInstance().signOut();
+       Intent intent = new Intent(HomePage.this, MainActivity.class);
+       startActivity(intent);
+       finish();
     }
 }
