@@ -5,6 +5,8 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -34,7 +36,7 @@ import java.util.List;
 public class SingleRecipe extends AppCompatActivity {
 
     private int recipeId;
-    private TextView titleView, sourceView, portionView, durationView;
+    private TextView titleView, sourceView, portionView, durationView, fullRecipeView;
     private ImageView recipeImage;
     private String recipeTitle, recipeSource, recipePortions, recipeDuration;
     private IngredientAdapter ingredientAdapter;
@@ -52,6 +54,8 @@ public class SingleRecipe extends AppCompatActivity {
         sourceView = findViewById(R.id.recipeSource);
         portionView = findViewById(R.id.portionsView);
         durationView = findViewById(R.id.readyIn);
+        fullRecipeView = findViewById(R.id.fullRecipeView);
+
         recipeImage = findViewById(R.id.recipeImageView);
 
         recipeId = this.getIntent().getIntExtra("id", 0);
@@ -87,6 +91,16 @@ public class SingleRecipe extends AppCompatActivity {
                             sourceView.setText("Recipe by: "+(String)response.get("sourceName"));
                             durationView.setText("Ready in: " +recipeDuration+" minutes");
                             portionView.setText("Makes: "+recipePortions+" servings");
+
+                            String url = (String)response.get("sourceUrl");
+                            fullRecipeView.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    Intent intent = new Intent(Intent.ACTION_VIEW);
+                                    intent.setData(Uri.parse(url));
+                                    startActivity(intent);
+                                }
+                            });
 
                             ingredientsArray = (JSONArray)response.get("extendedIngredients");
                             recipeIngredients = new ArrayList<>();

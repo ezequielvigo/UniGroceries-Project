@@ -7,6 +7,35 @@
     android:background="@color/lightGreen"
     tools:context=".SingleRecipe">
 
+    <TextView
+        android:id="@+id/fullRecipeView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:text="See full recipe"
+        android:textColor="#1565C0"
+        android:textSize="18sp"
+        app:fontFamily="@font/sdbold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recipeImageView"
+        app:layout_constraintVertical_bias="0.004" />
+
+    <TextView
+        android:id="@+id/portionsView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Makes:"
+        android:textColor="@color/primaryBrown"
+        android:textSize="18sp"
+        app:fontFamily="@font/sdultra"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/readyIn"
+        app:layout_constraintTop_toBottomOf="@+id/readyIn"
+        app:layout_constraintVertical_bias="0.066" />
+
     <Button
         android:id="@+id/button7"
         android:layout_width="33dp"
@@ -68,7 +97,6 @@
         android:id="@+id/recipeSource"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="22dp"
         android:text="Recipe by:"
         android:textColor="@color/primaryBrown"
         android:textSize="18sp"
@@ -77,7 +105,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.253"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recipeImageView"
+        app:layout_constraintTop_toBottomOf="@+id/fullRecipeView"
         app:layout_constraintVertical_bias="0.052" />
 
     <TextView
