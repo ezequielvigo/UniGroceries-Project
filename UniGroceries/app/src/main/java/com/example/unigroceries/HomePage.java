@@ -51,6 +51,7 @@ public class HomePage extends AppCompatActivity {
 
             }
 
+            //In the case of a request cancelled, it displays an error message
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
                 Toast.makeText(HomePage.this, "Couldn't retrieve user data", Toast.LENGTH_LONG).show();

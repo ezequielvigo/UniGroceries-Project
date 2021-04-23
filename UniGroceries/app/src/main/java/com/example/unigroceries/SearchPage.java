@@ -14,16 +14,19 @@ public class SearchPage extends AppCompatActivity {
         setContentView(R.layout.activity_search_page);
     }
 
+    //If user selects recipeSearch it redirects them to the appropriate page
     public void recipeSearch(View v){
         Intent recipeSearchIntent = new Intent(SearchPage.this, RecipeSearch.class);
         startActivity(recipeSearchIntent);
     }
 
+    //If user selects ingredientSearch it redirects them to the appropriate page
     public void ingredientSearch(View v){
         Intent ingredientSearchIntent = new Intent(SearchPage.this, IngredientSearch.class);
         startActivity(ingredientSearchIntent);
     }
 
+    //If the user presses back, it ends the Activity
     public void backPressed(View v){
         finish();
     }

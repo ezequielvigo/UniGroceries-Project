@@ -27,11 +27,13 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.MyViewHold
     private Context context;
     private List<RecipeModel> recipeList;
 
+    //Constructor, initialises our Context and recipeList
     public  RecipeAdapter(Context context, List<RecipeModel> recipeList){
         this.recipeList = recipeList;
         this.context = context;
     }
 
+    //Used to change the recipe list used by the Adapter
     public void setRecipeList(List<RecipeModel> recipeList) {
         this.recipeList = recipeList;
         notifyDataSetChanged();
@@ -40,19 +42,24 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.MyViewHold
     @NonNull
     @Override
     public RecipeAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType){
+        //Creates a view from an inflated version of our recycler_view_layout
         View view = LayoutInflater.from(context).inflate(R.layout.recipe_recycler_view, parent, false);
         return new MyViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+        //Sets the titleView to the title of our RecipeModel
         holder.titleView.setText(this.recipeList.get(position).getTitle().toString());
+
+        //Using Picasso to load, resize and display our image into the imageView
         Picasso.get()
                 .load(recipeList.get(position).getImageUrl())
                 .resize(240,150)
                 .centerCrop()
                 .into(holder.imageView);
 
+        //Redirects the user to the recipe viewing page if they click on the recipeModel
         holder.imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,6 +72,7 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.MyViewHold
     }
 
 
+    //Returns the number of items in the list
     @Override
     public int getItemCount() {
         if(this.recipeList != null){
@@ -79,7 +87,7 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.MyViewHold
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-
+            //Setting our TextView objects to the appropriate TextViews using their IDs
             titleView = (TextView)itemView.findViewById(R.id.recyclerTitleView);
             imageView = (ImageView)itemView.findViewById(R.id.recyclerImageView);
 

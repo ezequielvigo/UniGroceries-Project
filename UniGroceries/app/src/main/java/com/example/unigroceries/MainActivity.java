@@ -48,11 +48,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void temporaryNav(View v){
-        Intent navigationIntent = new Intent(MainActivity.this, HomePage.class);
-        startActivity(navigationIntent);
-        finish();
-    }
 
     public void signIn(View v){
 
@@ -78,6 +73,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
         progressBar.setVisibility(View.VISIBLE);
+
+        //Calling method to sign In the user with provided email and pssword
         mAuth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                 @Override
@@ -86,10 +83,13 @@ public class MainActivity extends AppCompatActivity {
                         // Sign in success, update UI with the signed-in user's information
                         Log.d("UniGroceries Debug", "signInWithEmail:success");
                         progressBar.setVisibility(View.GONE);
+
+                        //This is used to check whether the user has verified their email account
                         FirebaseUser user = mAuth.getCurrentUser();
                         if(user.isEmailVerified()){
                             startActivity(new Intent(MainActivity.this, HomePage.class));
                         }else{
+                            //Sends the user an email with a verification link if they have not
                             user.sendEmailVerification();
                             Toast.makeText(MainActivity.this, "Check your email to verify your account", Toast.LENGTH_LONG).show();
                         }
@@ -104,12 +104,13 @@ public class MainActivity extends AppCompatActivity {
                         progressBar.setVisibility(View.GONE);
                     }
 
-                    // ...
                 }
             });
 
     }
 
+
+    //If the user clicks Register it redirects them to the RegisterUser activity
     public void registerUser(View v){
         startActivity(new Intent(this, RegisterUser.class));
     }

@@ -13,7 +13,7 @@ public class RecipeModel {
         this.imageUrl = imageUrl;
     }
 
-    //All corresponding getters
+    //All corresponding getters and setters
     public int getId(){
         return id;
     }

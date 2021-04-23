@@ -87,7 +87,8 @@ public class RecipeSearch extends AppCompatActivity {
                             //Looping through this array retrieving id, title and image to create a RecipeModel object for each Recipe
                             for(int i = 0; i < responseArray.length(); i++){
                                 JSONObject jsonObject = responseArray.getJSONObject(i);
-                                responseRecipeList.add(new RecipeModel(jsonObject.optInt("id"), jsonObject.optString("title") , jsonObject.optString("image")));
+                                Log.d("Imageurl", jsonObject.optString("image"));
+                                responseRecipeList.add(new RecipeModel(jsonObject.optInt("id"), jsonObject.optString("title") , imageURL + jsonObject.optString("image")));
                             }
 
                             //Setting my previously created array to the contents of responseRecipeList containing all recipes
