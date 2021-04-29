@@ -66,7 +66,8 @@ public class RecipeSearch extends AppCompatActivity {
         ArrayList<RecipeModel> responseRecipeList= new ArrayList<>();
 
         //Making the request URL by incorporating the user search
-        String URL="https://api.spoonacular.com/recipes/search?query=" + search + "&number=30&instructionsRequired=true&apiKey=d6045fc138c141a19e45f291a9891b24";
+        String URL="https://api.spoonacular.com/recipes/search?query=" + search
+                + "&number=30&instructionsRequired=true&apiKey=d6045fc138c141a19e45f291a9891b24";
 
         //Used as the base URL for all images
         String imageURL = "https://spoonacular.com/recipeImages/";
@@ -88,7 +89,9 @@ public class RecipeSearch extends AppCompatActivity {
                             for(int i = 0; i < responseArray.length(); i++){
                                 JSONObject jsonObject = responseArray.getJSONObject(i);
                                 Log.d("Imageurl", jsonObject.optString("image"));
-                                responseRecipeList.add(new RecipeModel(jsonObject.optInt("id"), jsonObject.optString("title") , imageURL + jsonObject.optString("image")));
+                                responseRecipeList.add(new RecipeModel(jsonObject.optInt("id"),
+                                        jsonObject.optString("title") ,
+                                        imageURL + jsonObject.optString("image")));
                             }
 
                             //Setting my previously created array to the contents of responseRecipeList containing all recipes

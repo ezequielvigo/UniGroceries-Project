@@ -54,6 +54,7 @@ public class RegisterUser extends AppCompatActivity {
                                 //Notifies the user that their account has been created and removes the progressBar
                                Toast.makeText(RegisterUser.this, "User registered successfully", Toast.LENGTH_LONG).show();
                                progressBar.setVisibility(View.GONE);
+                               finish();
                             }else{
                                 //Notifies the user that their account couldn't be created and removes the progressBar
                                 Toast.makeText(RegisterUser.this, "User couldn't be registered", Toast.LENGTH_LONG).show();
